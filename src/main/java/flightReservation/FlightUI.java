@@ -1,4 +1,4 @@
-package flight_reservation;
+package flightReservation;
 
 public class FlightUI {
 	public static void createFlightUI(){}

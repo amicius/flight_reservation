@@ -1,4 +1,4 @@
-package flight_reservation;
+package flightReservation;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

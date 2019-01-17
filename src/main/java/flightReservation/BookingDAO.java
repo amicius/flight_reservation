@@ -1,4 +1,4 @@
-package flight_reservation;
+package flightReservation;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package flight_reservation;
+package flightReservation;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
+
+
 
 @Entity
 @Table(name = "booking")
