@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
 	
+	private final static String ASIGARD ="ASIGARD";
 	public static boolean ui = true;
 
 	public static void main(String[] args) {
@@ -17,10 +18,10 @@ public class Main {
 		Flight flight2 = new Flight("0002", PlaneType.A340, 200, "Brest-Guipavas", "Paris Charles-de-Gaulle",
 				new Date());
 		Flight flight3 = new Flight("0003", PlaneType.B747, 80,"Nantes-Montoir","Nice cote-d'azur",new Date());
-		Booking book1 = new Booking("ASIGARD", "Aria", 20, flight1);
-		Booking book4 = new Booking("ASIGARD", "Aria", 20, flight3);
-		Booking book5 = new Booking("ASIGARD", "Aria", 20, flight3);
-		Booking book2 = new Booking("ASIGARD", "Freya", 20, flight1);
+		Booking book1 = new Booking("", "Aria", 20, flight1);
+		Booking book4 = new Booking(ASIGARD, "Aria", 20, flight3);
+		Booking book5 = new Booking(ASIGARD, "Aria", 20, flight3);
+		Booking book2 = new Booking(ASIGARD, "Freya", 20, flight1);
 		Booking book3 = new Booking("RHAL","Darken",40,flight1);
 
 		flightDAO.create(flight1);
@@ -69,7 +70,7 @@ public class Main {
 			System.out.println(flight.toString());
 		}
 		
-		books = bookingDAO.bookedBy("ASIGARD");
+		books = bookingDAO.bookedBy(ASIGARD);
 		System.out.println(
 				"liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
 		for (Booking book : books) {
