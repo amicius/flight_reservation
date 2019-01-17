@@ -8,10 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import com.sun.istack.NotNull;
-
-
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "booking")
