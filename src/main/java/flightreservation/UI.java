@@ -3,7 +3,8 @@ package flightreservation;
 import java.util.Scanner;
 
 public class UI {
-	private final static String ERROR = "Mauvaise saisie";
+	
+	private static final  String ERROR = "Mauvaise saisie";
 
 	public static void mainUI() {
 		System.out.println("1) Gestion des vols\n2)Gestion des réservations\n3)quitter\nEntrez votre choix :\n");
@@ -69,4 +70,6 @@ public class UI {
 		}
 
 	}
+
+	
 }

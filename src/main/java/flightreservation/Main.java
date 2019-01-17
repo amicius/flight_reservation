@@ -7,8 +7,8 @@ public class Main {
 
 	public static boolean ui = true;
 
-	private final static String ASIGARD = "ASIGARD";
-	private final static String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
+	private static final  String ASIGARD = "ASIGARD";
+	private static final  String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 
 	public static void main(String[] args) {
 
