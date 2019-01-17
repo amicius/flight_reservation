@@ -6,6 +6,7 @@ import java.util.List;
 public class Main {
 	
 	private final static String ASIGARD ="ASIGARD";
+	private final static String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 	public static boolean ui = true;
 
 	public static void main(String[] args) {
@@ -46,7 +47,7 @@ public class Main {
 		bookingDAO.updtade(book5);
 
 		List<Flight> flights = flightDAO.flightList();
-		System.out.println("liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date");
+		System.out.println(AFFICHE);
 		for (Flight flight : flights) {
 			System.out.println(flight.toString());
 		}
@@ -59,13 +60,13 @@ public class Main {
 		}
 
 		flights = flightDAO.flightSearch(flight2.getFlightNumb());
-		System.out.println("liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date");
+		System.out.println(AFFICHE);
 		for (Flight flight : flights) {
 			System.out.println(flight.toString());
 		}
 		
 		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
-		System.out.println("liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date");
+		System.out.println(AFFICHE);
 		for (Flight flight : flights) {
 			System.out.println(flight.toString());
 		}
