@@ -5,8 +5,7 @@ import java.util.List;
 
 public class Main {
 	
-	private final static String ASIGARD ="ASIGARD";
-	private final static String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
+	
 	public static boolean ui = true;
 
 	public static void main(String[] args) {
@@ -79,5 +78,7 @@ public class Main {
 		}
 
 	}
+	private final static String ASIGARD ="ASIGARD";
+	private final static String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 
 }
