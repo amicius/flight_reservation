@@ -4,9 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 public class Main {
-	
-	
+
 	public static boolean ui = true;
+
+	private final static String ASIGARD = "ASIGARD";
+	private final static String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 
 	public static void main(String[] args) {
 
@@ -17,12 +19,12 @@ public class Main {
 				new Date());
 		Flight flight2 = new Flight("0002", PlaneType.A340, 200, "Brest-Guipavas", "Paris Charles-de-Gaulle",
 				new Date());
-		Flight flight3 = new Flight("0003", PlaneType.B747, 80,"Nantes-Montoir","Nice cote-d'azur",new Date());
+		Flight flight3 = new Flight("0003", PlaneType.B747, 80, "Nantes-Montoir", "Nice cote-d'azur", new Date());
 		Booking book1 = new Booking("", "Aria", 20, flight1);
 		Booking book4 = new Booking(ASIGARD, "Aria", 20, flight3);
 		Booking book5 = new Booking(ASIGARD, "Aria", 20, flight3);
 		Booking book2 = new Booking(ASIGARD, "Freya", 20, flight1);
-		Booking book3 = new Booking("RHAL","Darken",40,flight1);
+		Booking book3 = new Booking("RHAL", "Darken", 40, flight1);
 
 		flightDAO.create(flight1);
 		flightDAO.create(flight2);
@@ -52,8 +54,7 @@ public class Main {
 		}
 
 		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
-		System.out.println(
-				"liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+		System.out.println("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
 		for (Booking book : books) {
 			System.out.println(book.toString());
 		}
@@ -63,22 +64,19 @@ public class Main {
 		for (Flight flight : flights) {
 			System.out.println(flight.toString());
 		}
-		
+
 		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
 		System.out.println(AFFICHE);
 		for (Flight flight : flights) {
 			System.out.println(flight.toString());
 		}
-		
+
 		books = bookingDAO.bookedBy(ASIGARD);
-		System.out.println(
-				"liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+		System.out.println("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
 		for (Booking book : books) {
 			System.out.println(book.toString());
 		}
 
 	}
-	private final static String ASIGARD ="ASIGARD";
-	private final static String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 
 }
