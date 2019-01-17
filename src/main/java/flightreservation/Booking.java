@@ -34,9 +34,15 @@ public class Booking {
 	private Flight flight;
 
 	public Booking() {
+		this.bookingNum = "";
+		this.lastname = "";
+		this.firstname = "";
+		this.age = 0;
 	}
 
 	public Booking(String lastname, String firstname, int age, Flight flight) {
+
+		this.bookingNum = "";
 		this.lastname = lastname;
 		this.firstname = firstname;
 		this.age = age;
