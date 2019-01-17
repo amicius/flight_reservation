@@ -3,8 +3,8 @@ package flightreservation;
 import java.util.Scanner;
 
 public class UI {
-	
-	public static void mainUI(){
+
+	public static void mainUI() {
 		System.out.println("1) Gestion des vols\n2)Gestion des réservations\n3)quitter\nEntrez votre choix :\n");
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
@@ -17,10 +17,15 @@ public class UI {
 		case 3:
 			Main.ui = false;
 			break;
+		default:
+			System.out.println("Mauvaise saisie");
+			mainUI();
 		}
 	}
+
 	public static void flightUi() {
-		System.out.println("Gestion des vols\n1) Création d'un vol\n2)Liste des vols\n3)Recherche vol par numéro\n4)Recherche avion par ville de départ et d'arrivé\n5)retour\nEntrez votre choix :\n");
+		System.out.println(
+				"Gestion des vols\n1) Création d'un vol\n2)Liste des vols\n3)Recherche vol par numéro\n4)Recherche avion par ville de départ et d'arrivé\n5)retour\nEntrez votre choix :\n");
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
 		case 1:
@@ -38,11 +43,15 @@ public class UI {
 		case 5:
 			mainUI();
 			break;
+		default:
+			System.out.println("Mauvaise saisie");
+			flightUi();
 		}
 	}
-	
-	public static void bookingUI(){
-		System.out.println("Gestion des réservations\n1) Créer une réservation\n2) Voir les reservations d'un vol\n3) Annuler une réservation\n4) Voir toute les réservation d'une personne\n5) Retour\nEntrez votre choix :\n)");
+
+	public static void bookingUI() {
+		System.out.println(
+				"Gestion des réservations\n1) Créer une réservation\n2) Voir les reservations d'un vol\n3) Annuler une réservation\n4) Voir toute les réservation d'une personne\n5) Retour\nEntrez votre choix :\n)");
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
 		case 1:
@@ -53,7 +62,10 @@ public class UI {
 		case 3:
 			Main.ui = false;
 			break;
+		default:
+			System.out.println("Mauvaise saisie");
+			bookingUI();
 		}
-		
+
 	}
 }
