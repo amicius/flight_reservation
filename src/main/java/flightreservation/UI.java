@@ -2,23 +2,27 @@ package flightreservation;
 
 import java.util.Scanner;
 
-import main.Main;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 
 public class UI {
 
 	private static final String ERROR = "Mauvaise saisie";
-	private static boolean ui = true;
+	private static boolean uiBool = true;
+	private final static Logger LOG = LoggerFactory.getLogger(UI.class);
 
 	public static boolean getUi() {
-		return ui;
+		return uiBool;
 	}
 
 	public static void setUi(boolean ui) {
-		UI.ui = ui;
+		UI.uiBool = ui;
 	}
 
 	public static void mainUI() {
-		System.out.println("1) Gestion des vols\n2)Gestion des réservations\n3)quitter\nEntrez votre choix :\n");
+		LOG.trace("1) Gestion des vols\n2)Gestion des réservations\n3)quitter\nEntrez votre choix :\n");
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
 		case 1:
@@ -28,16 +32,16 @@ public class UI {
 			bookingUI();
 			break;
 		case 3:
-			ui = false;
+			uiBool = false;
 			break;
 		default:
-			System.out.println(ERROR);
+			LOG.error(ERROR);
 			mainUI();
 		}
 	}
 
 	public static void flightUi() {
-		System.out.println(
+		LOG.trace(
 				"Gestion des vols\n1) Création d'un vol\n2)Liste des vols\n3)Recherche vol par numéro\n4)Recherche avion par ville de départ et d'arrivé\n5)retour\nEntrez votre choix :\n");
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
@@ -57,13 +61,13 @@ public class UI {
 			mainUI();
 			break;
 		default:
-			System.out.println(ERROR);
+			LOG.error(ERROR);
 			flightUi();
 		}
 	}
 
 	public static void bookingUI() {
-		System.out.println(
+		LOG.trace(
 				"Gestion des réservations\n1) Créer une réservation\n2) Voir les reservations d'un vol\n3) Annuler une réservation\n4) Voir toute les réservation d'une personne\n5) Retour\nEntrez votre choix :\n)");
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
@@ -72,11 +76,13 @@ public class UI {
 			break;
 		case 2:
 			break;
-		case 3:
-			ui = false;
+		case 4:
+			break;
+		case 5:
+			mainUI();
 			break;
 		default:
-			System.out.println(ERROR);
+			LOG.error(ERROR);
 			bookingUI();
 		}
 
