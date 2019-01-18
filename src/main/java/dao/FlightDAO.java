@@ -1,9 +1,12 @@
-package flightreservation;
+package dao;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+
+import flightreservation.DatabaseHelper;
+import flightreservation.Flight;
 
 public class FlightDAO extends DAO<Flight> {
 

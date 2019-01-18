@@ -1,7 +1,16 @@
-package flightreservation;
+package main;
 
 import java.util.Date;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dao.BookingDAO;
+import dao.FlightDAO;
+import flightreservation.Booking;
+import flightreservation.Flight;
+import flightreservation.PlaneType;
 
 public class Main {
 
@@ -9,7 +18,8 @@ public class Main {
 
 	private static final  String ASIGARD = "ASIGARD";
 	private static final  String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
-
+	private final static Logger LOG = LoggerFactory.getLogger(Main.class);
+	
 	public static void main(String[] args) {
 
 		FlightDAO flightDAO = new FlightDAO();
@@ -48,33 +58,33 @@ public class Main {
 		bookingDAO.updtade(book5);
 
 		List<Flight> flights = flightDAO.flightList();
-		System.out.println(AFFICHE);
+		LOG.trace(AFFICHE);
 		for (Flight flight : flights) {
-			System.out.println(flight.toString());
+			LOG.trace(flight.toString());
 		}
 
 		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
-		System.out.println("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+		LOG.trace("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
 		for (Booking book : books) {
-			System.out.println(book.toString());
+			LOG.trace(book.toString());
 		}
 
 		flights = flightDAO.flightSearch(flight2.getFlightNumb());
-		System.out.println(AFFICHE);
+		LOG.trace(AFFICHE);
 		for (Flight flight : flights) {
-			System.out.println(flight.toString());
+			LOG.trace(flight.toString());
 		}
 
 		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
-		System.out.println(AFFICHE);
+		LOG.trace(AFFICHE);
 		for (Flight flight : flights) {
-			System.out.println(flight.toString());
+			LOG.trace(flight.toString());
 		}
 
 		books = bookingDAO.bookedBy(ASIGARD);
-		System.out.println("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+		LOG.trace("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
 		for (Booking book : books) {
-			System.out.println(book.toString());
+			LOG.trace(book.toString());
 		}
 
 	}

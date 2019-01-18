@@ -2,6 +2,8 @@ package flightreservation;
 
 import java.util.Scanner;
 
+import main.Main;
+
 public class UI {
 	
 	private static final  String ERROR = "Mauvaise saisie";

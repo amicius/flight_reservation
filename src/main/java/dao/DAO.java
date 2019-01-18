@@ -1,6 +1,8 @@
-package flightreservation;
+package dao;
 
 import javax.persistence.EntityManager;
+
+import flightreservation.DatabaseHelper;
 
 
 public abstract class DAO<T> {
