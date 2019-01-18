@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 import flightreservation.DatabaseHelper;
 import flightreservation.Flight;
 
-public class FlightDAO extends DAO<Flight> {
+public class FlightDAO implements DAO<Flight> {
 
 	public void delete(Flight flight) {
 		EntityManager db = DatabaseHelper.createEntityManager();

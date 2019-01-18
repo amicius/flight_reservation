@@ -9,7 +9,7 @@ import flightreservation.Booking;
 import flightreservation.DatabaseHelper;
 
 
-public class BookingDAO extends DAO<Booking>{
+public class BookingDAO implements DAO<Booking>{
 
 	
 	public void delete(Booking booking) {
