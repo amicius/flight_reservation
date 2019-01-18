@@ -14,10 +14,10 @@ import flightreservation.PlaneType;
 
 public class Main {
 
-	private static final  String ASIGARD = "ASIGARD";
-	private static final  String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
+	private static final String ASIGARD = "ASIGARD";
+	private static final String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 	private final static Logger LOG = LoggerFactory.getLogger(Main.class);
-	
+
 	public static void main(String[] args) {
 
 		FlightDAO flightDAO = new FlightDAO();
@@ -57,32 +57,43 @@ public class Main {
 
 		List<Flight> flights = flightDAO.flightList();
 		LOG.trace(AFFICHE);
-		for (Flight flight : flights) {
-			LOG.trace(flight.toString());
+		if (LOG.isTraceEnabled()) {
+			for (Flight flight : flights) {
+				LOG.trace("{}", flight.toString());
+
+			}
 		}
 
 		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
 		LOG.trace("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
-		for (Booking book : books) {
-			LOG.trace(book.toString());
+		if (LOG.isTraceEnabled()) {
+			for (Booking book : books) {
+				LOG.trace("{}", book.toString());
+			}
 		}
 
 		flights = flightDAO.flightSearch(flight2.getFlightNumb());
 		LOG.trace(AFFICHE);
-		for (Flight flight : flights) {
-			LOG.trace(flight.toString());
+		if (LOG.isTraceEnabled()) {
+			for (Flight flight : flights) {
+				LOG.trace("{}", flight.toString());
+			}
 		}
 
 		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
 		LOG.trace(AFFICHE);
-		for (Flight flight : flights) {
-			LOG.trace(flight.toString());
+		if (LOG.isTraceEnabled()) {
+			for (Flight flight : flights) {
+				LOG.trace("{}", flight.toString());
+			}
 		}
 
 		books = bookingDAO.bookedBy(ASIGARD);
 		LOG.trace("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
-		for (Booking book : books) {
-			LOG.trace(book.toString());
+		if (LOG.isTraceEnabled()) {
+			for (Booking book : books) {
+				LOG.trace("{}", book.toString());
+			}
 		}
 
 	}
