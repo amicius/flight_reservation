@@ -14,8 +14,6 @@ import flightreservation.PlaneType;
 
 public class Main {
 
-	public static boolean ui = true;
-
 	private static final  String ASIGARD = "ASIGARD";
 	private static final  String AFFICHE = "liste des vols\\nNuméro\\t|\\tType  | Place | Départ | Arrivé | Date";
 	private final static Logger LOG = LoggerFactory.getLogger(Main.class);

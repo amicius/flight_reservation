@@ -5,8 +5,17 @@ import java.util.Scanner;
 import main.Main;
 
 public class UI {
-	
-	private static final  String ERROR = "Mauvaise saisie";
+
+	private static final String ERROR = "Mauvaise saisie";
+	private static boolean ui = true;
+
+	public static boolean getUi() {
+		return ui;
+	}
+
+	public static void setUi(boolean ui) {
+		UI.ui = ui;
+	}
 
 	public static void mainUI() {
 		System.out.println("1) Gestion des vols\n2)Gestion des réservations\n3)quitter\nEntrez votre choix :\n");
@@ -19,7 +28,7 @@ public class UI {
 			bookingUI();
 			break;
 		case 3:
-			Main.ui = false;
+			ui = false;
 			break;
 		default:
 			System.out.println(ERROR);
@@ -64,7 +73,7 @@ public class UI {
 		case 2:
 			break;
 		case 3:
-			Main.ui = false;
+			ui = false;
 			break;
 		default:
 			System.out.println(ERROR);
@@ -73,5 +82,4 @@ public class UI {
 
 	}
 
-	
 }
