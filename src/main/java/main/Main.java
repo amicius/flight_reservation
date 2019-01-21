@@ -55,44 +55,44 @@ public class Main {
 		bookingDAO.updtade(book4);
 		bookingDAO.updtade(book5);
 
-//		List<Flight> flights = flightDAO.flightList();
-//		LOG.trace(AFFICHE);
-//		if (LOG.isTraceEnabled()) {
-//			for (Flight flight : flights) {
-//				LOG.trace("{}", flight.toString());
-//
-//			}
-//		}
-//
-//		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
-//		LOG.trace("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
-//		if (LOG.isTraceEnabled()) {
-//			for (Booking book : books) {
-//				LOG.trace("{}", book.toString());
-//			}
-//		}
-
-		Flight flight = flightDAO.flightSearch(flight2.getFlightNumb());
+		List<Flight> flights = flightDAO.flightList();
 		LOG.trace(AFFICHE);
 		if (LOG.isTraceEnabled()) {
+			for (Flight flight : flights) {
 				LOG.trace("{}", flight.toString());
+
+			}
 		}
 
-//		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
-//		LOG.trace(AFFICHE);
-//		if (LOG.isTraceEnabled()) {
-//			for (Flight flight : flights) {
-//				LOG.trace("{}", flight.toString());
-//			}
-//		}
-//
-//		books = bookingDAO.bookedBy(ASIGARD);
-//		LOG.trace("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
-//		if (LOG.isTraceEnabled()) {
-//			for (Booking book : books) {
-//				LOG.trace("{}", book.toString());
-//			}
-//		}
+		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
+		LOG.trace("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+		if (LOG.isTraceEnabled()) {
+			for (Booking book : books) {
+				LOG.trace("{}", book.toString());
+			}
+		}
+
+		Flight flightResult = flightDAO.flightSearch(flight2.getFlightNumb());
+		LOG.trace(AFFICHE);
+		if (LOG.isTraceEnabled()) {
+				LOG.trace("{}", flightResult.toString());
+		}
+
+		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
+		LOG.trace(AFFICHE);
+		if (LOG.isTraceEnabled()) {
+			for (Flight flight : flights) {
+				LOG.trace("{}", flight.toString());
+			}
+		}
+
+		books = bookingDAO.bookedBy(ASIGARD);
+		LOG.trace("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+		if (LOG.isTraceEnabled()) {
+			for (Booking book : books) {
+				LOG.trace("{}", book.toString());
+			}
+		}
 
 	}
 

@@ -40,19 +40,10 @@ public class BookingUI {
 
 	}
 
-	public static void bookingFlightUI() {
-		// TODO Auto-generated method stub
+	public static void bookingFlightUI() {}
 
-	}
+	public static void cancelBookingUI() {}
 
-	public static void cancelBookingUI() {
-		// TODO Auto-generated method stub
-
-	}
-
-	public static void bookingCustomerUI() {
-		// TODO Auto-generated method stub
-
-	}
+	public static void bookingCustomerUI() {}
 
 }
