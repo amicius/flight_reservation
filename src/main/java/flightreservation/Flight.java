@@ -13,8 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "flight")
@@ -44,7 +43,9 @@ public class Flight {
 	@OneToMany(mappedBy = "flight")
 	private List<Booking> bookings;
 
-	public Flight() {}
+	public Flight() {
+	}
+
 	public Flight(String flightNumb, PlaneType planeType, int capacity, String takeOff, String landing,
 			Date takeOffDate) {
 		this.flightNumb = flightNumb;
@@ -113,8 +114,8 @@ public class Flight {
 
 	@Override
 	public String toString() {
-		return flightNumb + "\t| " + planeType + "\t| " + capacity + "\t| " + takeOff + "\t| "
-				+ landing + "\t| " + takeOffDate;
+		return flightNumb + "\t| " + planeType + "\t| " + capacity + "\t| " + takeOff + "\t| " + landing + "\t| "
+				+ takeOffDate;
 	}
 
 }
