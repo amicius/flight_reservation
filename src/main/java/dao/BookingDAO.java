@@ -8,7 +8,6 @@ import javax.persistence.TypedQuery;
 
 import flightreservation.Booking;
 import flightreservation.DatabaseHelper;
-import flightreservation.Flight;
 
 
 public class BookingDAO implements DAO<Booking>{

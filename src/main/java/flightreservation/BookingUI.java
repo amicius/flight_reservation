@@ -14,7 +14,9 @@ public class BookingUI {
 	private static final FlightDAO flightDAO = new FlightDAO();
 	private static final BookingDAO bookingDAO = new BookingDAO();
 	private static final Logger LOG = LoggerFactory.getLogger(BookingUI.class);
-	private static final String vol = "Veuillez saisir le numéro du vol :";
+	private static final String VOL = "Veuillez saisir le numéro du vol :";
+	private static final String ENTER = "\nAppuyer sur Entrer pour continuer";
+	private static final String VOLIN = "Vol inexistant";
 
 	private BookingUI() {
 		throw new IllegalStateException("Utility class");
@@ -23,7 +25,7 @@ public class BookingUI {
 	public static void createBookingUI() {
 		Scanner sc = new Scanner(System.in);
 		Flight flight;
-		LOG.trace(vol);
+		LOG.trace(VOL);
 		flight = flightDAO.flightSearch(sc.nextLine());
 		if (flight != null) {
 			Booking book = new Booking();
@@ -37,11 +39,11 @@ public class BookingUI {
 			book.setAge(sc.nextInt());
 			UI.bookingUI();
 			LOG.trace("Réservation crée");
-			LOG.trace("\nAppuyer sur Entrer pour continuer");
+			LOG.trace(ENTER);
 			sc.nextLine();
 			UI.bookingUI();
 		} else {
-			LOG.error("Vol inexistant");
+			LOG.error(VOLIN);
 			UI.bookingUI();
 		}
 
@@ -50,7 +52,7 @@ public class BookingUI {
 	public static void bookingFlightUI() {
 		Scanner sc = new Scanner(System.in);
 		Flight flight;
-		LOG.trace(vol);
+		LOG.trace(VOL);
 		flight = flightDAO.flightSearch(sc.nextLine());
 		if (flight != null) {
 			List<Booking> books = bookingDAO.bookedFlight(flight.getFlightNumb());
@@ -60,11 +62,11 @@ public class BookingUI {
 					LOG.trace("{}", book.toString());
 				}
 			}
-			LOG.trace("\nAppuyer sur Entrer pour continuer");
+			LOG.trace(ENTER);
 			sc.nextLine();
 			UI.bookingUI();
 		} else {
-			LOG.error("Vol inexistant");
+			LOG.error(VOLIN);
 			UI.bookingUI();
 		}
 	}
@@ -77,11 +79,11 @@ public class BookingUI {
 		if (book != null) {
 			bookingDAO.delete(book);
 			LOG.trace("Réservation supprimé");
-			LOG.trace("\nAppuyer sur Entrer pour continuer");
+			LOG.trace(ENTER);
 			sc.nextLine();
 			UI.bookingUI();
 		} else {
-			LOG.error("Vol inexistant");
+			LOG.error(VOLIN);
 			UI.bookingUI();
 		}
 	}
@@ -96,7 +98,7 @@ public class BookingUI {
 				LOG.trace("{}", book.toString());
 			}
 		}
-		LOG.trace("\nAppuyer sur Entrer pour continuer");
+		LOG.trace(ENTER);
 		sc.nextLine();
 		UI.bookingUI();
 		
