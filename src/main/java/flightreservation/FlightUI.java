@@ -29,9 +29,13 @@ public class FlightUI {
 		LOG.trace("Numéro de vol :");
 		flight.setFlightNumb(sc.nextLine());
 		LOG.trace("Type d'avion :");
-		flight.setPlaneType(PlaneType.valueOf(sc.nextLine()));
+		try {
+		flight.setPlaneType(PlaneType.valueOf(sc.nextLine()));}
+		catch (IllegalArgumentException e) {
+			flight.setPlaneType(PlaneType.A330);
+		}
 		LOG.trace("Nombre de place :");
-		flight.setCapacity(sc.nextInt());
+		flight.setCapacity(Integer.valueOf(sc.nextLine()));
 		LOG.trace("Ville de départ :");
 		flight.setTakeOff(sc.nextLine());
 		LOG.trace("Ville d'arrivé :");
@@ -43,6 +47,12 @@ public class FlightUI {
 			LOG.error("Erreur sur la date saisie, date du jour mise par defaut");
 			flight.setTakeOffDate(new Date());
 		}
+		flightDAO.create(flight);
+		LOG.trace("Vol crée");
+		LOG.trace(ENTER);
+		sc.nextLine();
+		UI.flightUi();
+		
 	}
 
 	public static void printFlightUI() {

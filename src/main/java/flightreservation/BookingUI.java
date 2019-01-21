@@ -37,6 +37,7 @@ public class BookingUI {
 			LOG.trace("Age :");
 			book.setAge(sc.nextInt());
 			UI.bookingUI();
+			bookingDAO.create(book);
 			LOG.trace("Réservation crée");
 			LOG.trace(ENTER);
 			sc.nextLine();
