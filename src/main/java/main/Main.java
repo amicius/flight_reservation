@@ -25,7 +25,7 @@ public class Main {
 
 		Flight flight1 = new Flight("0001", PlaneType.A380, 853, "Brest-Guipavas", "Paris Charles-de-Gaulle",
 				new Date());
-		Flight flight2 = new Flight("0002", PlaneType.A340, 200, "Brest-Guipavas", "Paris Charles-de-Gaulle",
+		Flight flight2 = new Flight("0002", PlaneType.A340, 200, "Paris Charles-de-Gaulle", "Brest-Guipavas",
 				new Date());
 		Flight flight3 = new Flight("0003", PlaneType.B747, 80, "Nantes-Montoir", "Nice cote-d'azur", new Date());
 		Booking book1 = new Booking("", "Aria", 20, flight1);
@@ -55,46 +55,44 @@ public class Main {
 		bookingDAO.updtade(book4);
 		bookingDAO.updtade(book5);
 
-		List<Flight> flights = flightDAO.flightList();
+//		List<Flight> flights = flightDAO.flightList();
+//		LOG.trace(AFFICHE);
+//		if (LOG.isTraceEnabled()) {
+//			for (Flight flight : flights) {
+//				LOG.trace("{}", flight.toString());
+//
+//			}
+//		}
+//
+//		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
+//		LOG.trace("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+//		if (LOG.isTraceEnabled()) {
+//			for (Booking book : books) {
+//				LOG.trace("{}", book.toString());
+//			}
+//		}
+
+		Flight flight = flightDAO.flightSearch(flight2.getFlightNumb());
 		LOG.trace(AFFICHE);
 		if (LOG.isTraceEnabled()) {
-			for (Flight flight : flights) {
 				LOG.trace("{}", flight.toString());
-
-			}
 		}
 
-		List<Booking> books = bookingDAO.bookedFlight(flight1.getFlightNumb());
-		LOG.trace("liste des passagers ayant reservé le vol 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
-		if (LOG.isTraceEnabled()) {
-			for (Booking book : books) {
-				LOG.trace("{}", book.toString());
-			}
-		}
-
-		flights = flightDAO.flightSearch(flight2.getFlightNumb());
-		LOG.trace(AFFICHE);
-		if (LOG.isTraceEnabled()) {
-			for (Flight flight : flights) {
-				LOG.trace("{}", flight.toString());
-			}
-		}
-
-		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
-		LOG.trace(AFFICHE);
-		if (LOG.isTraceEnabled()) {
-			for (Flight flight : flights) {
-				LOG.trace("{}", flight.toString());
-			}
-		}
-
-		books = bookingDAO.bookedBy(ASIGARD);
-		LOG.trace("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
-		if (LOG.isTraceEnabled()) {
-			for (Booking book : books) {
-				LOG.trace("{}", book.toString());
-			}
-		}
+//		flights = flightDAO.flightSearch(flight1.getTakeOff(), flight1.getLanding());
+//		LOG.trace(AFFICHE);
+//		if (LOG.isTraceEnabled()) {
+//			for (Flight flight : flights) {
+//				LOG.trace("{}", flight.toString());
+//			}
+//		}
+//
+//		books = bookingDAO.bookedBy(ASIGARD);
+//		LOG.trace("liste des passagers reserve par : 1\nReservation\t| Nom\t\t| prenom\t| age\t| vol");
+//		if (LOG.isTraceEnabled()) {
+//			for (Booking book : books) {
+//				LOG.trace("{}", book.toString());
+//			}
+//		}
 
 	}
 

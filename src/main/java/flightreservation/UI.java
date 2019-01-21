@@ -76,13 +76,18 @@ public class UI {
 		Scanner sc = new Scanner(System.in);
 		switch (Integer.valueOf(sc.nextLine())) {
 		case 1:
-//			BookingUI.
+			BookingUI.createBookingUI();
 			break;
 		case 2:
+			BookingUI.bookingFlightUI();
 			break;
 		case 4:
+			BookingUI.cancelBookingUI();
 			break;
 		case 5:
+			BookingUI.bookingCustomerUI();
+			break;
+		case 6:
 			mainUI();
 			break;
 		default:

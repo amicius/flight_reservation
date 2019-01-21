@@ -1,19 +1,4 @@
-16:28:10.780 [main] [TRACE] main.Main - liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date 
-16:28:10.781 [main] [TRACE] main.Main - 0001	| A380	| 853	| Brest-Guipavas	| Paris Charles-de-Gaulle	| 2019-01-18 16:28:08.956 
-16:28:10.781 [main] [TRACE] main.Main - 0002	| A340	| 200	| Brest-Guipavas	| Paris Charles-de-Gaulle	| 2019-01-18 16:28:08.956 
-16:28:10.781 [main] [TRACE] main.Main - 0003	| B747	| 80	| Nantes-Montoir	| Nice cote-d'azur	| 2019-01-18 16:28:08.956 
-16:28:10.824 [main] [TRACE] main.Main - liste des passagers ayant reservé le vol 1
-Reservation	| Nom		| prenom	| age	| vol 
-16:28:10.824 [main] [TRACE] main.Main - 0001-1		| 	| Aria		| 20	| 0001 
-16:28:10.824 [main] [TRACE] main.Main - 0001-2		| ASIGARD	| Freya		| 20	| 0001 
-16:28:10.828 [main] [TRACE] main.Main - 0001-3		| RHAL	| Darken		| 40	| 0001 
-16:28:10.832 [main] [TRACE] main.Main - liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date 
-16:28:10.833 [main] [TRACE] main.Main - 0002	| A340	| 200	| Brest-Guipavas	| Paris Charles-de-Gaulle	| 2019-01-18 16:28:08.956 
-16:28:10.842 [main] [TRACE] main.Main - liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date 
-16:28:10.842 [main] [TRACE] main.Main - 0001	| A380	| 853	| Brest-Guipavas	| Paris Charles-de-Gaulle	| 2019-01-18 16:28:08.956 
-16:28:10.842 [main] [TRACE] main.Main - 0002	| A340	| 200	| Brest-Guipavas	| Paris Charles-de-Gaulle	| 2019-01-18 16:28:08.956 
-16:28:10.907 [main] [TRACE] main.Main - liste des passagers reserve par : 1
-Reservation	| Nom		| prenom	| age	| vol 
-16:28:10.908 [main] [TRACE] main.Main - 0001-2		| ASIGARD	| Freya		| 20	| 0001 
-16:28:10.908 [main] [TRACE] main.Main - 0003-4		| ASIGARD	| Aria		| 20	| 0003 
-16:28:10.908 [main] [TRACE] main.Main - 0003-5		| ASIGARD	| Aria		| 20	| 0003 
+11:58:37.916 [main] [TRACE] main.Main - liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date 
+11:58:37.916 [main] [TRACE] main.Main - 0002	| A340	| 200	| Paris Charles-de-Gaulle	| Brest-Guipavas	| 2019-01-21 11:58:35.861 
+11:59:52.885 [main] [TRACE] main.Main - liste des vols\nNuméro\t|\tType  | Place | Départ | Arrivé | Date 
+11:59:52.900 [main] [TRACE] main.Main - 0002	| A340	| 200	| Paris Charles-de-Gaulle	| Brest-Guipavas	| 2019-01-21 11:59:51.065 

@@ -15,21 +15,6 @@
 			</Pattern>
 		</encoder>
 	</appender>
-	<appender name="dailyRollingFileAppenderUI"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>ui.log</File>
-		<rollingPolicy
-			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<!-- daily rollover -->
-			<FileNamePattern>ui.%d{yyyy-MM-dd}.log</FileNamePattern>
-			<!-- keep 30 days' worth of history -->
-			<maxHistory>30</maxHistory>
-		</rollingPolicy>
-		<encoder>
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] [%-5level] %logger{35} - %msg %n
-			</Pattern>
-		</encoder>
-	</appender>
 	<appender name="consoleAppender"
 		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
@@ -45,7 +30,7 @@
 		<appender-ref ref="consoleAppender" />
 		<appender-ref ref="dailyRollingFileAppenderMAIN" />
 	</logger>
-	<logger name="ui" additivity="false">
+	<logger name="flightreservation" additivity="false">
 		<level value="TRACE" />
 		<appender-ref ref="consoleAppender" />
 	</logger>

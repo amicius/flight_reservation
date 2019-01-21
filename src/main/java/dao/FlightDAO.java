@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import flightreservation.DatabaseHelper;
@@ -31,13 +32,20 @@ public class FlightDAO implements DAO<Flight> {
 
 	}
 
-	public List<Flight> flightSearch(String flightNumb) {
+	public Flight flightSearch(String flightNumb) {
 		EntityManager db = DatabaseHelper.createEntityManager();
 		DatabaseHelper.beginTx(db);
 		TypedQuery<Flight> query = db.createQuery("select f from Flight f where f.flightNumb=: fn", Flight.class);
 		query.setParameter("fn", flightNumb);
+		Flight flight;
+		try {
+			flight = query.getSingleResult();
+			return flight;
+		} catch (NoResultException e) {
+			flight = null;
+			return flight;
+		}
 
-		return query.getResultList();
 	}
 
 	public List<Flight> flightSearch(String takeOff, String landing) {
@@ -47,7 +55,7 @@ public class FlightDAO implements DAO<Flight> {
 				Flight.class);
 		query.setParameter("to", takeOff);
 		query.setParameter("land", landing);
-		
+
 		return query.getResultList();
 
 	}
