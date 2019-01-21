@@ -24,13 +24,12 @@ public class BookingUI {
 
 	public static void createBookingUI() {
 		Scanner sc = new Scanner(System.in);
-		Flight flight;
 		LOG.trace(VOL);
-		flight = flightDAO.flightSearch(sc.nextLine());
+		Flight flight = flightDAO.flightSearch(sc.nextLine());
 		if (flight != null) {
 			Booking book = new Booking();
 			book.setFlightId(flight);
-			LOG.trace("Veuillez saisir les informations suivantes :");
+			LOG.trace("Création d'une nouvelle réservation\nVeuillez saisir les informations suivantes :");
 			LOG.trace("Nom :");
 			book.setLastname(sc.nextLine());
 			LOG.trace("Prénom :");
