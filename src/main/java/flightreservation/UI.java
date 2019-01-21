@@ -11,7 +11,11 @@ public class UI {
 
 	private static final String ERROR = "Mauvaise saisie";
 	private static boolean uiBool = true;
-	private final static Logger LOG = LoggerFactory.getLogger(UI.class);
+	private static final  Logger LOG = LoggerFactory.getLogger(UI.class);
+	
+	private UI() {
+		throw new IllegalStateException("Utility class"); 
+	}
 
 	public static boolean getUi() {
 		return uiBool;

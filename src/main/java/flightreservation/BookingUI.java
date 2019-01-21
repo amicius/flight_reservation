@@ -1,6 +1,10 @@
 package flightreservation;
 
 public class BookingUI {
+	
+	private BookingUI() {
+		throw new IllegalStateException("Utility class"); 
+	}
 
 	public static void createBookingUI() {
 		

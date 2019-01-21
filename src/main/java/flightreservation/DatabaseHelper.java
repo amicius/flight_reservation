@@ -12,6 +12,10 @@ public class DatabaseHelper {
 
 	private static EntityManagerFactory entityManagerFactory;
 
+	private DatabaseHelper() {
+		throw new IllegalStateException("Utility class"); 
+	}
+	
 	/**
 	 * @return
 	 */
