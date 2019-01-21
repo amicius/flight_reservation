@@ -1,21 +1,19 @@
 package flightreservation;
 
-import java.util.Date;
-import java.util.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dao.BookingDAO;
 import dao.FlightDAO;
 
 public class FlightUI {
 
 	private static final FlightDAO flightDAO = new FlightDAO();
-	private static final BookingDAO bookingDAO = new BookingDAO();
 	private static final Logger LOG = LoggerFactory.getLogger(BookingUI.class);
 	private static final String ENTER = "\nAppuyer sur Entrer pour continuer";
 
@@ -67,7 +65,9 @@ public class FlightUI {
 		LOG.trace("Veuillez saisir le numéro du vol :");
 		Flight flight = flightDAO.flightSearch(sc.nextLine());
 		LOG.trace("Votre vol :\nNuméro\t|Type\t|Place\t|Départ\t|Arrivé\t|Date");
-		LOG.trace(flight.toString());
+		if (LOG.isTraceEnabled()) {
+			LOG.trace(flight.toString());
+		}
 		LOG.trace(ENTER);
 		sc.nextLine();
 		UI.flightUi();
